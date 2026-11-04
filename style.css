@@ -1,0 +1,212 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-branco: white;
+    --cor-cinza-claro: #d1d1d1;
+    --cor-fundo: #303030;
+    --cor-fundo-caixa: #4d4d4d;
+    --cor-fundo-caixa-hover: #3d3d3d;
+    --cor-caixa-dentro-caixa: #3f3f3f;
+    --cor-borda: #696969;
+
+    --cor-fundo-atencao: #b89214;
+    --cor-borda-atencao: #d87f03;
+
+    /* Cores de links */
+    --cor-link: dodgerblue;
+    --cor-link-visitado: rgb(182, 77, 235);
+    --cor-link-hover: red;
+    --cor-link-ativo: yellow;
+}
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+
+header, nav, main, footer {
+    background-color: var(--cor-fundo-caixa);
+    color: var(--cor-branco);
+    margin: 20px 400px;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+}
+
+
+
+
+
+h1 {
+    font-size: 60px;
+    padding: 10px;
+}
+
+h2 {
+    padding: 10px;
+}
+
+p {
+    font-size: 18px;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+ul, section ol {
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+
+
+
+
+
+header {
+    font-size: large;
+    text-align: center;
+    padding: 40px 0px;
+}
+
+
+
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    
+    position: sticky;
+    top: 5px; /* Ajustado para alinhar com o padding de 20px do body ao grudar */
+    z-index: 1000; /* Garante que o menu vai passar por CIMA de qualquer outro elemento ao rolar */
+    /* Opcional: Se quiser que ele não fique colado nas bordas da tela enquanto rola */
+    /* margin-top: -5px; */
+}
+
+nav a {
+    text-decoration: none;
+    border: 10px;
+    border-radius: 5px;
+    padding: 8px 14px;
+}
+
+nav a:link {
+    color: var(--cor-branco);
+}
+
+nav a:visited {
+    color: var(--cor-branco);
+}
+
+nav a:hover {
+    color: var(--cor-branco);
+    background-color: var(--cor-fundo-caixa-hover);
+}
+
+nav a:active {
+    color: var(--cor-cinza-claro);
+}
+
+
+
+
+
+main {
+
+}
+
+
+
+
+
+main section {
+    background-color: var(--cor-caixa-dentro-caixa);
+    margin: 20px 10px;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    min-height: 15vh;
+}
+
+
+
+
+
+main section h2 {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/* Link normal */
+a:link {
+    color: var(--cor-link);
+}
+
+/* Link já visitado */
+a:visited {
+    color: var(--cor-link-visitado);
+}
+
+/* Mouse em cima do link */
+a:hover {
+    color: var(--cor-link-hover);
+}
+
+/* Ao clicar no link */
+a:active {
+    color: var(--cor-link-ativo);
+}
+
+
+
+
+
+.atencao {
+  background-color: var(--cor-fundo-atencao);
+  border-left: 5px solid var(--cor-borda-atencao);
+  /* padding-left: +5px; */
+  padding: 15px 18px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* .botaorodape{
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    
+    border-radius: 10px;
+}
+.botaorodape:active{
+    background-color: darkred;
+} */
