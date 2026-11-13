@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -10,8 +11,10 @@
     --cor-fundo: #303030;
     --cor-fundo-caixa: #4d4d4d;
     --cor-fundo-caixa-hover: #3d3d3d;
-    --cor-caixa-dentro-caixa: #3f3f3f;
+    --cor-fundo-secao: #3f3f3f;
     --cor-borda: #696969;
+    --cor-texto: #d1d1d1;
+    --cor-sombra: rgba(0, 0, 0, 0.2);
 
     --cor-fundo-atencao: #b89214;
     --cor-borda-atencao: #d87f03;
@@ -44,10 +47,10 @@ body {
 
 
 
-header, nav, main, footer {
+header, nav, footer {
     background-color: var(--cor-fundo-caixa);
     color: var(--cor-branco);
-    margin: 20px 400px;
+    /* margin: 20px 400px; */
     padding: 10px;
     border: 1px solid var(--cor-borda);
     border-radius: 5px;
@@ -58,7 +61,7 @@ header, nav, main, footer {
 
 
 h1 {
-    font-size: 60px;
+    font-size: clamp(32px, 6vw, 60px);
     padding: 10px;
 }
 
@@ -67,10 +70,13 @@ h2 {
 }
 
 p {
+    color: var(--cor-texto);
     font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
-section img {
+.imagem-circular {
     max-width: 100%;
     height: auto;
     display: block;
@@ -99,8 +105,10 @@ header {
 
 nav {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
     
     position: sticky;
     top: 5px; /* Ajustado para alinhar com o padding de 20px do body ao grudar */
@@ -110,10 +118,12 @@ nav {
 }
 
 nav a {
+    text-align: center;
     text-decoration: none;
-    border: 10px;
+    border: 1px solid var(--cor-borda);
     border-radius: 5px;
     padding: 8px 14px;
+    transition: background-color 0.2s ease;
 }
 
 nav a:link {
@@ -138,7 +148,14 @@ nav a:active {
 
 
 main {
+    color: var(--cor-texto);
+    width: 100%;
+    max-width: 900px;
+    margin: 25px auto;
 
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 
@@ -146,12 +163,13 @@ main {
 
 
 main section {
-    background-color: var(--cor-caixa-dentro-caixa);
-    margin: 20px 10px;
-    padding: 10px;
+    background-color: var(--cor-fundo-secao);
+    /* margin: 20px 10px; */
+    /* margin-top: 30px; */
+    padding: 30px;
     border: 1px solid var(--cor-borda);
     border-radius: 5px;
-    min-height: 15vh;
+    /* min-height: 15vh; */
 }
 
 
@@ -159,7 +177,14 @@ main section {
 
 
 main section h2 {
-    margin-bottom: 10px;
+    color: var(--cor-branco);
+    border-bottom: 2px solid var(--cor-borda);
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+}
+
+main section h3 {
+    color: var(--cor-branco);
 }
 
 
@@ -177,6 +202,11 @@ th, td {
     border: 1px solid var(--cor-borda);
     padding: 10px 14px;
     word-wrap: break-word;
+}
+
+th {
+    color: var(--cor-branco);
+    background-color: var(--cor-fundo-caixa);
 }
 
 
@@ -210,6 +240,7 @@ a:active {
 .atencao {
   background-color: var(--cor-fundo-atencao);
   border-left: 5px solid var(--cor-borda-atencao);
+  color: var(--cor-branco);
   /* padding-left: +5px; */
   padding: 15px 18px;
   border-radius: 5px;
@@ -227,3 +258,27 @@ a:active {
 .botaorodape:active{
     background-color: darkred;
 } */
+
+
+
+
+
+/* Queries */
+
+@media (max-width: 600px) {
+  nav {
+    justify-content: flex-start; /* Começa os links pelo lado esquerdo. */
+    flex-wrap: nowrap; /* Impede que os links quebrem para outra linha. */
+
+    overflow-x: auto; /* Permite deslizar horizontalmente quando necessário. */
+    overflow-y: hidden; /* Impede rolagem vertical dentro do menu. */
+
+    white-space: nowrap; /* Impede que o texto dos links quebre em várias linhas. */
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav a {
+    flex-shrink: 0; /* 	Impede que os botões diminuam de tamanho para caber. */
+  }
+}
