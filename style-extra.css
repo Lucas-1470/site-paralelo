@@ -1,3 +1,7 @@
+:root {
+    --cor-fundo-hobbies: #333333;
+}
+
 .anim-h1 {
     animation: animh1 0.9s ease-out both;
 }
@@ -25,4 +29,19 @@
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.diferenciais {
+    display: flex;
+    gap: 20px;
+}
+
+.diferencial {
+    flex: 1;
+    background-color: var(--cor-fundo-hobbies);
+    border: 1px solid var(--cor-borda);
+    border-top: 4px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
 }
