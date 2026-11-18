@@ -45,3 +45,92 @@
     padding: 20px;
     text-align: center;
 }
+
+.imagens2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.imagem2{
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    position: relative;
+}
+.imagem2 img{
+    display: block;
+    width: 100%;
+    height: 170px;
+    border-bottom: 12px;
+    /* object-fit: cover; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.imagem2 h3, .imagem2 p{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    grid-template-areas: 
+    "destaque destaque f2"
+    "destaque destaque f3"
+    "f4       f5       f6";
+}
+.foto:nth-child(1) {grid-area: destaque; }
+.foto:nth-child(2) {grid-area: f2; }
+.foto:nth-child(3) {grid-area: f3; }
+.foto:nth-child(4) {grid-area: f4; }
+.foto:nth-child(5) {grid-area: f5; }
+.foto:nth-child(6) {grid-area: f6; }
+
+.foto {
+    position: relative;
+    overflow: hidden;   /* Esconde a parte da imagem que cresce com o zoom */
+    border-radius: 10px;
+    cursor: zoom-in;    /* Altera o cursor para indicar a possibilidade de zoom */
+}
+.foto img{
+    width: 100%;    /* largura */
+    height: 100%;   /* altura */
+    object-fit: cover;  /* Preenche o espaço disponível mantendo a proporção */
+    display: block; /* Converte em bloco. Por padrão, img é inline */
+    transition: transform 0.5s; /* Efeito suave de meio segundo */
+}
+.foto:hover img{
+    transform: scale(1.1); /* Aumenta a imagem em 10% (1.1) do seu tamanho original */
+}
+.foto figcaption{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 14px;
+    background: linear-gradient(transparent, rgba(59, 43, 34, 0.9));
+    color: var(--cor-branco);
+    font-weight: bold;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+.foto:hover figcaption{
+    transform: translateY(0);
+}
+
+@media (max-width: 600px){
+
+    h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    .diferenciais{
+        flex-direction: column;
+    }
+}
